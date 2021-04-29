@@ -44,7 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _loadPokedex() async {
     final pokedexData =
-        (await rootBundle.loadString('assets/Pokemon.csv')).split('\n');
+        (await rootBundle.loadString('assets/Pokemon.csv', cache: false))
+            .split('\n');
     final total = pokedexData.length - 1;
     List<Pokemon> importedPokemons = [];
 
